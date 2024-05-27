@@ -14,8 +14,13 @@ const quizContainer = document.getElementById("quiz-container");
 const submitButton = document.getElementById("submit-btn");
 const questionTitle = document.getElementById("question-title");
 const intro = document.getElementById("intro");
+const colorBlindCheckbox = document.getElementById("colorblind-checkbox");
 
-let shuffledQuestions, currentQuestionIndex, score;
+let shuffledQuestions, currentQuestionIndex, score, colorBlind;
+
+colorBlindCheckbox.addEventListener("change", () => {
+  colorBlind = colorBlindCheckbox.checked;
+});
 
 startButton.addEventListener("click", () => {
   category.classList.remove("hide");
@@ -101,9 +106,19 @@ function selectAnswer(e) {
   Array.from(answerButtonsElement.children).forEach((button) => {
     button.removeEventListener("click", selectAnswer);
     if (button.dataset.correct === "true") {
-      button.classList.add("correct");
+      if (colorBlind) {
+        button.classList.add("color-blind");
+      } else {
+        button.classList.add("correct");
+      }
+      button.innerHTML += " ✔️";
     } else {
-      button.classList.add("wrong");
+      if (colorBlind) {
+        button.classList.add("color-blind");
+      } else {
+        button.classList.add("wrong");
+      }
+      button.innerHTML += " ❌";
     }
   });
   if (correct) {

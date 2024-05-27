@@ -80,6 +80,69 @@ header {
   background: #dc3545;
 }
 
+.color-blind {
+  background: #90833f;
+}
+
+#colorblind-checkbox {
+  margin-top: 20px;
+}
+
+#colorblind-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 100px;
+  height: 50px;
+  background: grey;
+  margin-left: 10px;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+input:checked + label {
+  background: #bada55;
+}
+
+input:checked + label:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 92px;
+}
+
 .hide {
   display: none !important;
 }
@@ -104,4 +167,10 @@ footer {
 footer p {
   margin: 5px 0;
   color: #888;
+}
+
+@media screen and (max-width: 600px) {
+  footer {
+    position: static;
+  }
 }
