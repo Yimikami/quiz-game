@@ -1,17 +1,26 @@
 const category = document.getElementById("category");
+const startButton = document.getElementById("start-btn");
 const restartButton = document.getElementById("restart-btn");
 const questionContainer = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const resultContainer = document.getElementById("result-container");
 const scoreElement = document.getElementById("score");
-const categoryButtons = document.querySelectorAll("#category button");
+const categoryButtons = document
+  .getElementById("category")
+  .querySelectorAll("button");
 const nextButton = document.getElementById("next-btn");
 const quizContainer = document.getElementById("quiz-container");
 const submitButton = document.getElementById("submit-btn");
 const questionTitle = document.getElementById("question-title");
+const intro = document.getElementById("intro");
 
 let shuffledQuestions, currentQuestionIndex, score;
+
+startButton.addEventListener("click", () => {
+  category.classList.remove("hide");
+  intro.classList.add("hide");
+});
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {

@@ -1,23 +1,38 @@
-body {
-  font-family: "Arial", sans-serif;
-  background-color: #f4f4f4;
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+
+* {
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: #333;
+  color: #fff;
   margin: 0;
 }
 
+header {
+  text-align: center;
+}
+
+#intro {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 #game {
-  padding-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 #quiz-container {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #222;
+  border: 4px solid #fff;
+  border-radius: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   width: 600px;
   max-width: 100%;
   padding: 20px;
+  text-align: center;
 }
 
 #question-container {
@@ -25,12 +40,12 @@ body {
 }
 
 #question-title {
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
 #question {
-  font-size: 20px;
+  font-size: 24px;
   margin-bottom: 10px;
 }
 
@@ -40,18 +55,21 @@ body {
 }
 
 .btn {
-  background: #007bff;
+  background: #555;
   color: #fff;
-  border: none;
-  padding: 10px;
+  border: 2px solid #fff;
+  padding: 15px;
   margin: 5px 0;
   cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 0;
+  font-size: 18px;
+  text-transform: uppercase;
+  transition: background 0.3s, transform 0.3s;
 }
 
 .btn:hover {
-  background: #0056b3;
+  background: #777;
+  transform: scale(1.05);
 }
 
 .correct {
@@ -67,6 +85,10 @@ body {
 }
 
 #category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -74,11 +96,12 @@ body {
 footer {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  right: 0;
   text-align: center;
   margin-top: 20px;
 }
 
 footer p {
   margin: 5px 0;
+  color: #888;
 }

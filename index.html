@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header>
+      <img src="logo.png" alt="Quiz Game" width="350px" />
+    </header>
+    <div id="intro">
+      <h1>Welcome to Quiz Game</h1>
+      <p>
+        Test your knowledge with our quiz game. Choose a category and answer the
+        questions. Good luck!
+      </p>
+      <br />
+      <button class="btn" id="start-btn">Start</button>
+    </div>
     <div id="game">
-      <div id="category">
+      <div id="category" class="hide">
         <h1>Please choose a category</h1>
         <button class="btn" id="movie">Movies</button>
         <button class="btn" id="music">Music</button>
@@ -17,7 +29,9 @@
         <button class="btn" id="science">Science</button>
         <button class="btn" id="geography">Geography</button>
         <button class="btn" id="politics">Politics</button>
+        <p class="btn">Coming soon. Stay tuned!</p>
       </div>
+
       <div id="quiz-container" class="hide">
         <div id="question-container">
           <h1 id="question-title">Question</h1>
@@ -37,7 +51,7 @@
         <div id="result-container" class="hide">
           <h1>Results</h1>
           <p id="score"></p>
-          <p>Don't forget share your result with us on community 😇</p>
+          <p>Don't forget to share your result with us on the community 😇</p>
           <button id="restart-btn" class="btn">Restart</button>
         </div>
       </div>
