@@ -8,6 +8,7 @@ This is a simple quiz game implemented in JavaScript, HTML, and CSS. It presents
 - Randomized order of questions for each playthrough.
 - Simple and intuitive user interface.
 - Responsive design, suitable for desktop and mobile devices.
+- Colorblind mode
 
 ### Technologies Used
 
