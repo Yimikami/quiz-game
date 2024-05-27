@@ -64,7 +64,10 @@ function startGame() {
 }
 
 function setNextQuestion() {
-  resetState();
+  nextButton.classList.add("hide");
+  while (answerButtonsElement.firstChild) {
+    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+  }
   showQuestion(shuffledQuestions[currentQuestionIndex]);
 }
 
@@ -83,20 +86,16 @@ function showQuestion(question) {
   });
 }
 
-function resetState() {
-  clearStatusClass(document.body);
-  nextButton.classList.add("hide");
-  while (answerButtonsElement.firstChild) {
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-  }
-}
-
 function selectAnswer(e) {
   const selectedButton = e.target;
   const correct = selectedButton.dataset.correct === "true";
   Array.from(answerButtonsElement.children).forEach((button) => {
     button.removeEventListener("click", selectAnswer);
-    setStatusClass(button, button.dataset.correct === "true");
+    if (button.dataset.correct === "true") {
+      button.classList.add("correct");
+    } else {
+      button.classList.add("wrong");
+    }
   });
   if (correct) {
     score++;
@@ -106,20 +105,6 @@ function selectAnswer(e) {
   } else {
     submitButton.classList.remove("hide");
   }
-}
-
-function setStatusClass(element, correct) {
-  clearStatusClass(element);
-  if (correct) {
-    element.classList.add("correct");
-  } else {
-    element.classList.add("wrong");
-  }
-}
-
-function clearStatusClass(element) {
-  element.classList.remove("correct");
-  element.classList.remove("wrong");
 }
 
 function showResult() {
