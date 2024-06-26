@@ -96,6 +96,12 @@ categoryButtons.addEventListener("click", async (e) => {
     quizContainer.classList.remove("hide");
     categoryName = e.target.innerText;
     questions = await fetchQuestions(e.target.id, difficulty);
+    // If no questions are found for the selected category and difficulty, reset the quiz
+    if (questions.length === 0) {
+      alert("No questions found for this category and difficulty!");
+      resetQuiz();
+      return;
+    }
     startGame();
   }
 });
@@ -105,7 +111,8 @@ nextButton.addEventListener("click", () => {
   setNextQuestion();
 });
 
-restartButton.addEventListener("click", () => {
+// i've converted addEventListener to a function so that i can use it in 'no questions found' scenario
+function resetQuiz() {
   category.classList.remove("hide");
   difficultyDiv.classList.remove("hide");
   quizContainer.classList.add("hide");
@@ -115,7 +122,9 @@ restartButton.addEventListener("click", () => {
     button.classList.remove("selected");
   });
   difficulty = null;
-});
+}
+
+restartButton.addEventListener("click", resetQuiz);
 
 async function startGame() {
   currentQuestionIndex = 0;

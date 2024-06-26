@@ -99,7 +99,7 @@ h2 {
 }
 
 .selected {
-  background: #007bff;
+  background: #007bff !important;
 }
 
 #difficulty-container {
