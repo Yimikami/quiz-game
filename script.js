@@ -17,8 +17,26 @@ const difficultyButtons = document
   .getElementById("difficulty")
   .querySelectorAll("button");
 const showResultButton = document.getElementById("submit-btn");
+const accessibility = document.getElementById("accessibility");
 
 let currentQuestionIndex, score, difficulty, categoryName, questions;
+
+// Accessibility feature to change font-family to 'Oswald'. Source (https://stackoverflow.com/a/28930990)
+accessibility.addEventListener("change", function () {
+  if (accessibility.checked) {
+    // Create the <style> tag
+    let style = document.createElement("style");
+    // WebKit hack
+    style.appendChild(document.createTextNode(""));
+    // Add the <style> element to the page
+    document.head.appendChild(style);
+    // insert the rule
+    style.sheet.insertRule("* { font-family: 'Oswald', cursive !important; }");
+  } else {
+    // Remove the <style> element from the page
+    document.head.removeChild(document.head.lastChild);
+  }
+});
 
 startButton.addEventListener("click", async () => {
   category.classList.remove("hide");
@@ -43,7 +61,6 @@ async function fetchCategories() {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   const data = await response.json();
-  console.log(data.trivia_categories);
   return data.trivia_categories;
 }
 
@@ -65,7 +82,6 @@ async function fetchQuestions(category, difficulty) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
   const data = await response.json();
-  console.log(data.results);
   return data.results;
 }
 
