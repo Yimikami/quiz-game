@@ -24,4 +24,4 @@ Then, while progressing in the Intermediate JavaScript course on Codédex, I enc
 
 ## What I Learned
 
-I learned advanced concepts of async functions, data fetching, and improved my skills in JavaScript, CSS, and HTML. Additionally, I learned how to use a function to decode HTML entities (e.g., &quot; to ") (source: https://stackoverflow.com/a/34064434).
+I learned advanced concepts of async functions, data fetching, and improved my skills in JavaScript, CSS, and HTML. Additionally, I learned how to use a function to decode HTML entities (e.g., \&quot; to ") (source: https://stackoverflow.com/a/34064434).
