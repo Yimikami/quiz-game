@@ -5,10 +5,17 @@
   background-color: #333;
   color: #fff;
   margin: 0;
+  cursor: url("assets/cursor.png"), auto;
 }
 
 header {
   text-align: center;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin: 20px 0;
 }
 
 #intro {
@@ -70,90 +77,48 @@ header {
 .btn:hover {
   background: #777;
   transform: scale(1.05);
+  cursor: url("assets/cursor_point.png"), auto;
 }
 
 .correct {
-  background: #28a745;
+  background: #28a745 !important;
 }
 
 .wrong {
   background: #dc3545;
 }
 
-.color-blind {
-  background: #90833f;
-}
-
-#colorblind-checkbox {
-  margin-top: 20px;
-}
-
-#colorblind-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
-
-input[type="checkbox"] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 100px;
-  height: 50px;
-  background: grey;
-  margin-left: 10px;
-  display: block;
-  border-radius: 100px;
-  position: relative;
-}
-
-label:after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  width: 40px;
-  height: 40px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
-}
-
-input:checked + label {
-  background: #bada55;
-}
-
-input:checked + label:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
-}
-
-label:active:after {
-  width: 92px;
+.selected-answer {
+  background: #777;
+  transform: scale(1.05);
 }
 
 .hide {
   display: none !important;
 }
 
-#category {
+.selected {
+  background: #007bff;
+}
+
+#difficulty-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   margin-bottom: 20px;
   text-align: center;
+}
+
+#difficulty-container .btn {
+  margin: 10px;
+}
+
+#categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 70px;
 }
 
 footer {
@@ -172,6 +137,18 @@ footer p {
 @media screen and (max-width: 600px) {
   #quiz-container {
     width: auto;
+  }
+
+  #categories {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  h1,
+  h2 {
+    font-size: 24px;
   }
 
   footer {

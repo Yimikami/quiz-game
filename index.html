@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Game</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets/favicon.png" />
   </head>
   <body>
     <header>
-      <img src="logo.png" alt="Quiz Game" width="350px" />
+      <img src="assets/logo.png" alt="Quiz Game" width="350px" />
     </header>
     <div id="intro">
       <h1>Welcome to Quiz Game</h1>
@@ -18,24 +19,19 @@
       </p>
       <br />
       <button class="btn" id="start-btn">Start</button>
-
-      <div id="colorblind-container">
-        <h3>Colorblind Mode</h3>
-        <input type="checkbox" id="colorblind-checkbox" />
-        <label for="colorblind-checkbox">Toggle</label>
-      </div>
     </div>
     <div id="game">
+      <div id="difficulty" class="hide">
+        <h1>Please choose a difficulty</h1>
+        <div id="difficulty-container">
+          <button class="btn" id="easy">Easy</button>
+          <button class="btn" id="medium">Medium</button>
+          <button class="btn" id="hard">Hard</button>
+        </div>
+      </div>
       <div id="category" class="hide">
         <h1>Please choose a category</h1>
-        <button class="btn" id="movie">Movies</button>
-        <button class="btn" id="music">Music</button>
-        <button class="btn" id="sports">Sports</button>
-        <button class="btn" id="history">History</button>
-        <button class="btn" id="science">Science</button>
-        <button class="btn" id="geography">Geography</button>
-        <button class="btn" id="politics">Politics</button>
-        <p class="btn">Coming soon. Stay tuned!</p>
+        <div id="categories"></div>
       </div>
 
       <div id="quiz-container" class="hide">
@@ -46,13 +42,7 @@
         </div>
         <div id="controls">
           <button id="next-btn" class="next-btn btn hide">Next</button>
-          <button
-            id="submit-btn"
-            class="next-btn btn hide"
-            onclick="showResult()"
-          >
-            Results
-          </button>
+          <button id="submit-btn" class="next-btn btn hide">Results</button>
         </div>
         <div id="result-container" class="hide">
           <h1>Results</h1>
@@ -68,6 +58,6 @@
         for final project of Codédex
       </p>
     </footer>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

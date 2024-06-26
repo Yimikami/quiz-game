@@ -1,21 +1,18 @@
-**Quiz Game**
+# Quiz Game
 
-This is a simple quiz game implemented in JavaScript, HTML, and CSS. It presents the user with multiple-choice questions from various categories such as movies, music, sports, history, science, geography, and politics. The user can select a category and then answer the questions presented.
+This is a simple Quiz Game application that fetches trivia questions from the Open Trivia Database (https://opentdb.com/) and allows users to answer them. Users can select a category and difficulty level before starting the quiz. The game keeps track of the score and displays the results at the end.
 
-### Features
+## Features
 
-- Multiple categories to choose from.
-- Randomized order of questions for each playthrough.
-- Simple and intuitive user interface.
-- Responsive design, suitable for desktop and mobile devices.
-- Colorblind mode
+- Fetches trivia questions from the Open Trivia Database API.
+- Allows users to select a category and difficulty level.
+- Randomizes the order of answer choices.
+- Keeps track of the user's score.
+- Displays a message based on the user's performance at the end of the quiz.
+- Includes a feature to prevent users from switching tabs to cheat.
 
 ### Technologies Used
 
 - HTML5
 - CSS3
 - JavaScript
-
-### License
-
-This project is licensed under the [MIT License](LICENSE). Feel free to modify and distribute it as you like.
